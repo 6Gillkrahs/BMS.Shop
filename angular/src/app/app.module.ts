@@ -17,11 +17,17 @@ import { AbpOAuthModule } from '@abp/ng.oauth';
 import { ThemeLeptonXModule } from '@abp/ng.theme.lepton-x';
 import { SideMenuLayoutModule } from '@abp/ng.theme.lepton-x/layouts';
 import { AccountLayoutModule } from '@abp/ng.theme.lepton-x/account';
+import {AppLayoutModule} from './layout/app.layout.module'
+import { ToastModule } from 'primeng/toast';
+
+
+
 @NgModule({
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    AppLayoutModule,
     CoreModule.forRoot({
       environment,
       registerLocaleFn: registerLocale(),
@@ -37,9 +43,10 @@ import { AccountLayoutModule } from '@abp/ng.theme.lepton-x/account';
     
     FeatureManagementModule.forRoot(),
     InternetConnectionStatusComponent,
-    ThemeLeptonXModule.forRoot(),
+    // ThemeLeptonXModule.forRoot(),
     SideMenuLayoutModule.forRoot(),
-    AccountLayoutModule.forRoot()
+    AccountLayoutModule.forRoot(),
+    ToastModule
   ],
   declarations: [AppComponent],
   providers: [APP_ROUTE_PROVIDER],
